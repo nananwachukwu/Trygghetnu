@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Shelter - Trygghet.nu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .search-container {
+      margin-bottom: 2rem;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .shelter-result {
+      display: none;
+      border-left: 4px solid var(--accent-color);
+    }
+    .shelter-result.visible {
+      display: block;
+    }
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">TRYGGHET.NU</a>
+    <button class="exit-button">⚡ EXIT NOW ⚡</button>
+  </header>
+
+  <main>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="resources.html">Resources</a>
+      <a href="shelters.html">Find Shelter</a>
+      <a href="templates.html">Templates</a>
+      <a href="safety.html">Safe Browsing</a>
+      <a href="map.html">Maps</a>
+    </div>
+
+    <h1>Find a Shelter (Kvinnojour)</h1>
+    <p>Search for your city or municipality to find local support. Your search is private and not tracked.</p>
+
+    <div class="search-container">
+      <input type="text" id="shelterSearch" class="search-input" placeholder="Enter city or municipality (e.g. Stockholm, Malmö)...">
+    </div>
+
+    <div id="shelterList">
+      <!-- Stockholm -->
+      <div class="card shelter-result" data-city="stockholm">
+        <h3>Alla Kvinnors Hus (Stockholm)</h3>
+        <p>Support and sheltered housing for women and children.</p>
+        <a href="tel:086440920" class="emergency-link">08-644 09 20</a>
+      </div>
+      <div class="card shelter-result" data-city="stockholm">
+        <h3>Kvinnojouren Stockholm</h3>
+        <p>Support, advice, and sheltered housing.</p>
+        <a href="tel:086440920" class="emergency-link">08-644 09 20</a>
+      </div>
+
+      <!-- Göteborg -->
+      <div class="card shelter-result" data-city="göteborg goteborg">
+        <h3>Kvinnojouren Göteborg</h3>
+        <p>Support and sheltered housing in Gothenburg.</p>
+        <a href="tel:031130533" class="emergency-link">031-13 05 33</a>
+      </div>
+
+      <!-- Malmö -->
+      <div class="card shelter-result" data-city="malmö malmo">
+        <h3>Kvinnojouren Malmö</h3>
+        <p>Support and sheltered housing in Malmö.</p>
+        <a href="tel:040301113" class="emergency-link">040-30 11 13</a>
+      </div>
+
+      <!-- Uppsala -->
+      <div class="card shelter-result" data-city="uppsala">
+        <h3>Kvinnojouren Uppsala</h3>
+        <p>Support and sheltered housing in Uppsala.</p>
+        <a href="tel:018101049" class="emergency-link">018-10 10 49</a>
+      </div>
+
+      <!-- Västerås -->
+      <div class="card shelter-result" data-city="västerås vasteras">
+        <h3>Kvinnojouren Västerås</h3>
+        <p>Support and sheltered housing in Västerås.</p>
+        <a href="tel:021123936" class="emergency-link">021-12 39 36</a>
+      </div>
+
+      <!-- Örebro -->
+      <div class="card shelter-result" data-city="örebro orebro">
+        <h3>Kvinnohuset Örebro</h3>
+        <p>Support and sheltered housing in Örebro.</p>
+        <a href="tel:019144300" class="emergency-link">019-14 43 00</a>
+      </div>
+
+      <!-- Linköping -->
+      <div class="card shelter-result" data-city="linköping linkoping">
+        <h3>Kvinnojouren Linköping</h3>
+        <p>Support and sheltered housing in Linköping.</p>
+        <a href="tel:013134303" class="emergency-link">013-13 43 03</a>
+      </div>
+
+      <!-- Helsingborg -->
+      <div class="card shelter-result" data-city="helsingborg">
+        <h3>Kvinnojouren Helsingborg</h3>
+        <p>Support and sheltered housing in Helsingborg.</p>
+        <a href="tel:042180508" class="emergency-link">042-18 05 08</a>
+      </div>
+
+      <!-- Jönköping -->
+      <div class="card shelter-result" data-city="jönköping jonkoping">
+        <h3>Kvinnojouren Jönköping</h3>
+        <p>Support and sheltered housing in Jönköping.</p>
+        <a href="tel:036163682" class="emergency-link">036-16 36 82</a>
+      </div>
+
+      <!-- Norrköping -->
+      <div class="card shelter-result" data-city="norrköping norrkoping">
+        <h3>Kvinnojouren Norrköping</h3>
+        <p>Support and sheltered housing in Norrköping.</p>
+        <a href="tel:011100300" class="emergency-link">011-10 03 00</a>
+      </div>
+
+      <div id="noResults" class="no-results">
+        <p>No local shelters found for this search. Please try a nearby major city or contact the national helpline:</p>
+        <a href="tel:116016" class="emergency-link">116 016</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Privacy & Safety</h3>
+      <ul>
+        <li>This search happens entirely in your browser. No data is sent to our servers.</li>
+        <li>If you cannot find a local shelter here, call <strong>116 016</strong> or <strong>112</strong>.</li>
+        <li>Social services in every municipality are required to help you.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer-info">
+    <p>Data provided for informational purposes. Always call 112 in an emergency.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('shelterSearch').addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase().trim();
+      const results = document.querySelectorAll('.shelter-result');
+      const noResults = document.getElementById('noResults');
+      let found = false;
+
+      results.forEach(res => {
+        const cities = res.getAttribute('data-city').toLowerCase();
+        if (query.length > 1 && cities.includes(query)) {
+          res.classList.add('visible');
+          found = true;
+        } else {
+          res.classList.remove('visible');
+        }
+      });
+
+      if (query.length > 1 && !found) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
